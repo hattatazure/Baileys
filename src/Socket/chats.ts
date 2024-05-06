@@ -377,6 +377,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 	}
 
 	const resyncAppState = ev.createBufferedFunction(async(collections: readonly WAPatchName[], isInitialSync: boolean) => {
+		/*
 		// we use this to determine which events to fire
 		// otherwise when we resync from scratch -- all notifications will fire
 		const initialVersionMap: { [T in WAPatchName]?: number } = {}
@@ -513,6 +514,7 @@ export const makeChatsSocket = (config: SocketConfig) => {
 		for(const key in globalMutationMap) {
 			onMutation(globalMutationMap[key])
 		}
+  		*/
 	})
 
 	/**
