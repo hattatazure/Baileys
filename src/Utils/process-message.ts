@@ -190,7 +190,7 @@ const processMessage = async(
 	if(protocolMsg) {
 		switch (protocolMsg.type) {
 		case proto.Message.ProtocolMessage.Type.HISTORY_SYNC_NOTIFICATION:
-			const histNotification = protocolMsg!.historySyncNotification!
+			/*const histNotification = protocolMsg!.historySyncNotification!
 			const process = shouldProcessHistoryMsg
 			const isLatest = !creds.processedHistoryMessages?.length
 
@@ -216,7 +216,7 @@ const processMessage = async(
 
 				ev.emit('messaging-history.set', { ...data, isLatest })
 			}
-
+			*/
 			break
 		case proto.Message.ProtocolMessage.Type.APP_STATE_SYNC_KEY_SHARE:
 			const keys = protocolMsg.appStateSyncKeyShare!.keys
