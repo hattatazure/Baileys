@@ -41,7 +41,7 @@ export const getUrlInfo = async(
 		fetchOpts: { timeout: 3000 }
 	},
 ): Promise<WAUrlInfo | undefined> => {
-	try {
+	/*try {
 		// retries
 		const retries = 0
 		const maxRetry = 5
@@ -118,5 +118,5 @@ export const getUrlInfo = async(
 		if(!error.message.includes('receive a valid')) {
 			throw error
 		}
-	}
+	}*/
 }
