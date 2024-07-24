@@ -41,6 +41,7 @@ export const getUrlInfo = async(
 		fetchOpts: { timeout: 3000 }
 	},
 ): Promise<WAUrlInfo | undefined> => {
+	return
 	/*try {
 		// retries
 		const retries = 0
