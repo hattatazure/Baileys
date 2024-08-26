@@ -614,12 +614,20 @@ export const getWAUploadToServer = (
 
 			const auth = encodeURIComponent(uploadInfo.auth) // the auth token
 			const url = `https://${hostname}${MEDIA_PATH_MAP[mediaType]}/${fileEncSha256B64}?auth=${auth}&token=${fileEncSha256B64}`
+			const streamToBuffer = async (stream) => {
+			const chunks = [];
+			for await (const chunk of stream) {
+			    chunks.push(chunk);
+			}
+			return Buffer.concat(chunks);
+		    	};
+		    	const buffer = await streamToBuffer(stream);
 			let result: any
 			try {
 
 				const body = await axios.post(
 					url,
-					stream,
+					buffer,
 					{
 						...options,
 						headers: {
