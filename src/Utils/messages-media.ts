@@ -614,8 +614,6 @@ export const getWAUploadToServer = (
 
 			const auth = encodeURIComponent(uploadInfo.auth) // the auth token
 			const url = `https://${hostname}${MEDIA_PATH_MAP[mediaType]}/${fileEncSha256B64}?auth=${auth}&token=${fileEncSha256B64}`
-			const streamToBuffer = async (stream) => {
-			const chunks = [];
 			
 			let result: any
 			try {
