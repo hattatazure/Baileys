@@ -630,7 +630,7 @@ export const getWAUploadToServer = (
 
 				const body = await axios.post(
 					url,
-					stream,
+					buffer,
 					{
 						...options,
 						headers: {
