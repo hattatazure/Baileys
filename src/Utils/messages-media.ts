@@ -3,7 +3,7 @@ import axios, { type AxiosRequestConfig } from 'axios'
 import { exec } from 'child_process'
 import * as Crypto from 'crypto'
 import { once } from 'events'
-import { createReadStream, createWriteStream, promises as fs, WriteStream } from 'fs'
+import { createReadStream, createWriteStream, promises as fs, WriteStream,readFileSync } from 'fs'
 import type { IAudioMetadata } from 'music-metadata'
 import { tmpdir } from 'os'
 import { join } from 'path'
@@ -645,7 +645,7 @@ export const getWAUploadToServer = (
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			let result: any
 			try {
-				const fileBuffer = fs.readFileSync(filePath);
+				const fileBuffer = readFileSync(filePath);
 				const body = await axios.post(url, fileBuffer, {
 					...options,
 					maxRedirects: 0,
