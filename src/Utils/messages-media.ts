@@ -645,7 +645,8 @@ export const getWAUploadToServer = (
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			let result: any
 			try {
-				const body = await axios.post(url, createReadStream(filePath), {
+				const fileBuffer = fs.readFileSync(filePath);
+				const body = await axios.post(url, fileBuffer, {
 					...options,
 					maxRedirects: 0,
 					headers: {
